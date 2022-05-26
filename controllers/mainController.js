@@ -45,6 +45,11 @@ const mainController = {
 
     index: (req,res) => {
         res.render('index', {about: about, menu:menuDelDia });
+    },
+    detalle: (req,res) => {
+        let plato =menuDelDia.find( plato => plato.id == req.params.menuId )
+        console.log(plato);
+        res.render('detalleMenu', {plata: plato});
     }
 
 }
