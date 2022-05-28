@@ -1,4 +1,4 @@
-const about= {
+const about = {
     title: 'Restaurant',
     description: 'El más rico de Buenos Aires',
     history: 'Creado hace 50 años',
@@ -44,13 +44,13 @@ const menuDelDia = [{
 const mainController = {
 
     index: (req,res) => {
-        res.render('index', {about: about, menu:menuDelDia });
+        res.render('index', {about: about, menu: menuDelDia });
     },
-    detalle: (req,res) => {
-        let plato =menuDelDia.find( plato => plato.id == req.params.menuId )
+    detail: (req,res) => {
+        let plato = menuDelDia.find(( plato ) => plato.id == req.params.menuId) ;
         console.log(plato);
-        res.render('detalleMenu', {plata: plato});
-    }
+        res.render('detalle', {plato : plato});
+    },
 
 }
 
